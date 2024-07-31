@@ -8,6 +8,20 @@ const config: Config = {
     "./sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      neutral: {
+        20: "#F7F7F7",
+        30: "#E8E8E8",
+        40: "#CECECE",
+        50: "#B3B3B3",
+        60: "#878787",
+        70: "#696A6E",
+        80: "#404145",
+        90: "#303030",
+      },
+      black: "#000000",
+      white: "#FFFFFF",
+    },
     screens: {
       sm: "375px",
       md: "768px",
@@ -28,11 +42,6 @@ const config: Config = {
       fontSize: {
         hero: "clamp(5.5rem, 7.48vw + 4rem, 10.75rem)",
       },
-    },
-    colors: {
-      neutralhero: "#696A6E",
-      black: "#000000",
-      white: "#FFFFFF",
     },
   },
   plugins: [],

@@ -61,7 +61,7 @@ export const Header = () => {
         >
           <div className="flex flex-col gap-8">
             <div className="flex justify-between items-center text-lg">
-              <span className="text-white/80">Menu</span>
+              <span className="text-neutral-40">Menu</span>
               <div
                 className="flex items-center gap-4 cursor-pointer"
                 onClick={() => setShowMenu(!showMenu)}
