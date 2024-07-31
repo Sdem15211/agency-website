@@ -57,7 +57,7 @@ export const Header = () => {
           initial="hidden"
           animate={showMenu ? "visible" : "hidden"}
           exit="exit"
-          className="bg-black rounded-3xl text-white p-8 absolute w-[350px] md:w-[600px] h-fit right-4 top-4"
+          className="bg-black shadow-xl rounded-3xl text-white p-8 absolute w-[350px] md:w-[600px] h-fit right-4 top-4"
         >
           <div className="flex flex-col gap-8">
             <div className="flex justify-between items-center text-lg">

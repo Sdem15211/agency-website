@@ -24,7 +24,16 @@ const config: Config = {
         lg: "3rem",
       },
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        hero: "clamp(5.5rem, 7.48vw + 4rem, 10.75rem)",
+      },
+    },
+    colors: {
+      neutralhero: "#696A6E",
+      black: "#000000",
+      white: "#FFFFFF",
+    },
   },
   plugins: [],
 };
