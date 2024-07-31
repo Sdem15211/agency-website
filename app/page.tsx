@@ -1,7 +1,9 @@
+import { Header } from "@/sections/Header";
+
 export default function Home() {
   return (
     <div>
-      <p>Main</p>
+      <Header />
     </div>
   );
 }
