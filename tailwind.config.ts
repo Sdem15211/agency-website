@@ -19,7 +19,7 @@ const config: Config = {
         80: "#404145",
         90: "#303030",
       },
-      black: "#000000",
+      black: "#010202",
       white: "#FFFFFF",
     },
     screens: {

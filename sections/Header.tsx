@@ -9,19 +9,13 @@ import { motion } from "framer-motion";
 
 const variants = {
   hidden: {
-    opacity: 0,
-    x: "100%",
+    x: "100vw",
     y: "-50%",
   },
   visible: {
-    opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: "spring", duration: 1 },
-  },
-  exit: {
-    x: "-100vh",
-    transition: { ease: "spring", duration: 1 },
+    transition: { type: "spring", duration: 0.85 },
   },
 };
 
@@ -56,7 +50,6 @@ export const Header = () => {
           variants={variants}
           initial="hidden"
           animate={showMenu ? "visible" : "hidden"}
-          exit="exit"
           className="bg-black shadow-xl rounded-3xl text-white p-8 absolute w-[350px] md:w-[600px] h-fit right-4 top-4"
         >
           <div className="flex flex-col gap-8">
@@ -74,7 +67,11 @@ export const Header = () => {
             </div>
             <nav className="flex flex-col gap-6 md:gap-8 text-3xl md:text-5xl">
               {headerLinks.map((item, index) => (
-                <Link key={index} href={item.link}>
+                <Link
+                  key={index}
+                  href={item.link}
+                  onClick={() => setShowMenu(false)}
+                >
                   {item.label}
                 </Link>
               ))}
