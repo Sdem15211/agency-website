@@ -12,9 +12,11 @@ export const About = () => {
                 SYDNEY, AU
               </span>
             </span>
-            <button className="hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
+            <button className="group hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
               <span className="font-semibold uppercase">Get in touch</span>
-              <ArrowRight />
+              <div className="group-hover:translate-x-2 duration-300 ease-out">
+                <ArrowRight />
+              </div>
             </button>
           </div>
           <p className="text-3xl md:text-5xl leading-snug">
@@ -26,9 +28,11 @@ export const About = () => {
             world.
           </p>
           <div className="flex flex-col gap-6">
-            <button className="flex md:hidden w-full justify-center gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
+            <button className="group flex md:hidden w-full justify-center gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
               <span className="font-semibold uppercase">Get in touch</span>
-              <ArrowRight />
+              <div className="group-hover:translate-x-2 duration-300 ease-out">
+                <ArrowRight />
+              </div>
             </button>
             <div className="flex flex-col gap-6 md:flex-row justify-between md:items-end">
               <span className="underline text-lg md:text-2xl font-medium">

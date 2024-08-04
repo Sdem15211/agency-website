@@ -31,9 +31,11 @@ export const Header = () => {
             <span className="font-medium">tivy</span>
           </div>
           <div className="flex items-center gap-12">
-            <button className="hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
+            <button className="group hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
               <span className="font-semibold uppercase">Get in touch</span>
-              <ArrowRight />
+              <div className="group-hover:translate-x-2 duration-300 ease-out">
+                <ArrowRight />
+              </div>
             </button>
             <div
               className="flex items-center gap-6 cursor-pointer"

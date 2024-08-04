@@ -5,7 +5,7 @@ import { Projects } from "@/sections/Projects";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <Header />
       <Hero />
       <About />
