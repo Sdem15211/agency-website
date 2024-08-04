@@ -23,8 +23,8 @@ export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header>
-      <div className="md:px-12 px-6">
+    <header className="overflow-x-hidden">
+      <div className="md:px-12 px-6 overflow-x-hidden">
         <div className="flex justify-between items-center mt-16 md:mt-8">
           <div className="text-2xl md:text-3xl gap-[1px] flex">
             <span className="font-light">Krea</span>
