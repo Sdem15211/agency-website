@@ -71,7 +71,7 @@ export const DesktopProjects = () => {
               key={index}
               className="flex justify-center items-center relative"
             >
-              <div className="w-[1345px] h-screen relative">
+              <div className="w-[90vw] h-screen relative">
                 <Image
                   src={`/assets/images${project.image}`}
                   alt={project.title}
@@ -81,9 +81,8 @@ export const DesktopProjects = () => {
                 <Image
                   src="/assets/images/Mask.png"
                   alt="mask"
-                  width={1345}
-                  height={471}
-                  className="absolute bottom-0"
+                  fill
+                  className="absolute bottom-0 object-cover"
                 />
               </div>
               <div className="flex justify-between items-end absolute bottom-12 w-full px-12">
