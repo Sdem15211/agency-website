@@ -19,16 +19,16 @@ const scaleAnimation = {
   },
 };
 
-interface Service {
+type Service = {
   image: string;
   title: string;
   description: string;
-}
+};
 
-interface ModalProps {
+type ModalProps = {
   modal: { active: boolean; index: number };
   services: Service[];
-}
+};
 
 export const Modal: React.FC<ModalProps> = ({ modal, services }) => {
   const { active, index } = modal;
@@ -58,7 +58,7 @@ export const Modal: React.FC<ModalProps> = ({ modal, services }) => {
   }, []);
 
   if (!Array.isArray(services)) {
-    return null; // or some fallback UI
+    return null;
   }
 
   return (

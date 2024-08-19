@@ -72,7 +72,7 @@ export const Services = () => {
                 setModal({ active: false, index });
               }}
             >
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center mix-blend-difference">
                 <div className="md:hidden w-[330px] h-[200px] relative">
                   <Image
                     src={`/assets/images/${service.image}`}
