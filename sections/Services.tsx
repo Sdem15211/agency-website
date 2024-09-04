@@ -46,7 +46,7 @@ export const Services = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="py-14 md:py-32">
+    <section id="services" className="py-14 md:py-32">
       <div className="px-6 md:px-12">
         <div className="flex justify-between items-center mb-14 md:mb-24">
           <div className="flex flex-col gap-8 justify-center items-center md:items-start">
