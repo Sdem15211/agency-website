@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 interface Achievement {
   title: string;
   description: string;
@@ -44,7 +44,11 @@ export const Achievements: React.FC = () => {
       <div className="px-6 md:px-12">
         <div className="flex flex-col w-full">
           {achievements.map((achievement, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: "20%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               key={index}
               className="flex-col lg:flex-row flex lg:justify-between items-start py-4 lg:py-14 lg:gap-64 gap-16 border-b border-b-zinc-600 border-opacity-50"
             >
@@ -54,7 +58,7 @@ export const Achievements: React.FC = () => {
               <p className="flex-1 text-base text-white/80">
                 {achievement.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,11 +1,18 @@
 import { ArrowRight } from "@/components/icons/ArrowRight";
+import { motion } from "framer-motion";
 
 export const About = () => {
   return (
     <section className="py-14 md:py-24">
       <div className="px-6 md:px-12">
         <div className="flex flex-col gap-10 md:gap-20">
-          <div className="flex flex-row items-center justify-center md:justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: "50%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="flex flex-row items-center justify-center md:justify-between"
+          >
             <span className="text-lg md:text-2xl">
               Digital Agency based in{" "}
               <span className="underline font-medium text-lg md:text-2xl">
@@ -18,16 +25,28 @@ export const About = () => {
                 <ArrowRight />
               </div>
             </button>
-          </div>
-          <p className="text-3xl md:text-5xl leading-snug">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: "20%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-3xl md:text-5xl leading-snug"
+          >
             Based in the vibrant heart of Sydney, Australia, Kreativy is not
             just a digital agency; we're your partners in creativity. Our
             mission is to turn your dreams into reality, one pixel at a time.
             With a diverse team of designers, developers, and innovators, we're
             constantly pushing the boundaries of what's possible in the digital
             world.
-          </p>
-          <div className="flex flex-col gap-6">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: "20%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex flex-col gap-6"
+          >
             <button className="group flex md:hidden w-full justify-center gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
               <span className="font-semibold uppercase">Get in touch</span>
               <div className="group-hover:translate-x-2 duration-300 ease-out">
@@ -43,7 +62,7 @@ export const About = () => {
                 <span>+31 222 433 112</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

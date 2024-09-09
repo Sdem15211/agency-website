@@ -26,18 +26,34 @@ export const Header = () => {
     <header className="overflow-x-hidden">
       <div className="md:px-12 px-6 overflow-x-hidden">
         <div className="flex justify-between items-center mt-16 md:mt-8">
-          <div className="text-2xl md:text-3xl gap-[1px] flex">
+          <motion.div
+            initial={{ opacity: 0, y: "100%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="text-2xl md:text-3xl gap-[1px] flex"
+          >
             <span className="font-light">Krea</span>
             <span className="font-medium">tivy</span>
-          </div>
+          </motion.div>
           <div className="flex items-center gap-12">
-            <button className="group hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full">
+            <motion.button
+              initial={{ opacity: 0, y: "100%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+              className="group hidden md:flex gap-2 text-lg items-center border border-black py-4 px-6 rounded-full"
+            >
               <span className="font-semibold uppercase">Get in touch</span>
               <div className="group-hover:translate-x-2 duration-300 ease-out">
                 <ArrowRight />
               </div>
-            </button>
-            <div
+            </motion.button>
+            <motion.div
+              initial={{ opacity: 0, y: "100%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
               className="flex items-center gap-6 cursor-pointer"
               onClick={() => setShowMenu(!showMenu)}
             >
@@ -45,7 +61,7 @@ export const Header = () => {
                 Menu
               </span>
               <Menu />
-            </div>
+            </motion.div>
           </div>
         </div>
         <motion.div

@@ -2,6 +2,7 @@
 import { Modal } from "@/components/ui/Modal";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -50,16 +51,36 @@ export const Services = () => {
       <div className="px-6 md:px-12">
         <div className="flex justify-between items-center mb-14 md:mb-24">
           <div className="flex flex-col gap-8 justify-center items-center md:items-start">
-            <h2 className="text-[56px] lg:text-8xl">Our services</h2>
-            <p className="text-2xl lg:text-[32px] max-w-[1000px] text-neutral-90 font-light">
+            <motion.h2
+              initial={{ opacity: 0, y: "20%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="text-[56px] lg:text-8xl"
+            >
+              Our services
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: "20%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="text-2xl lg:text-[32px] max-w-[1000px] text-neutral-90 font-light"
+            >
               Our services are more than just solutions, they're opportunities
               to transform your digital presence and achieve your business
               objectives. We're here to make your digital dreams a reality.
-            </p>
+            </motion.p>
           </div>
-          <button className="underline uppercase hidden md:flex text-2xl">
+          <motion.button
+            initial={{ opacity: 0, y: "20%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="underline uppercase hidden md:flex text-2xl"
+          >
             View all services
-          </button>
+          </motion.button>
         </div>
         <div className="flex flex-col gap-8 justify-center items-center">
           {services.map((service, index) => (
@@ -81,14 +102,20 @@ export const Services = () => {
                   />
                 </div>
               </div>
-              <div className="border-b border-neutral-30 flex flex-col md:flex-row justify-between md:gap-0 gap-8 py-10 md:py-20">
+              <motion.div
+                initial={{ opacity: 0, y: "20%" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="border-b border-neutral-30 flex flex-col md:flex-row justify-between md:gap-0 gap-8 py-10 md:py-20"
+              >
                 <h2 className="pointer-events-none text-4xl md:text-[56px] tracking-wide md:w-1/2">
                   {service.title}
                 </h2>
                 <p className="pointer-events-none md:w-1/2 text-lg md:text-2xl text-neutral-90 leading-relaxed font-light">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
