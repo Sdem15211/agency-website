@@ -1,14 +1,46 @@
+"use client";
 import { ArrowRight } from "@/components/icons/ArrowRight";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
+  const paragraphRef = useRef<HTMLParagraphElement>(null); // Use ref for paragraph
+  const [words, setWords] = useState<(string | null)[]>([]);
+  useEffect(() => {
+    const text = paragraphRef.current; // Use ref to get the paragraph element
+    if (!text) return;
+    const splitText = new SplitType(text, { types: "words", tagName: "span" });
+    if (!splitText) return;
+    const splitWords = splitText.words
+      ? Array.from(splitText.words).map((word) => word.textContent)
+      : [];
+    setWords(splitWords);
+    gsap.from(splitText.words, {
+      opacity: 0.15,
+      stagger: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: text,
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: true,
+        once: true,
+      },
+    });
+  }, []);
+
   return (
     <section className="py-14 md:py-24">
       <div className="px-6 md:px-12">
         <div className="flex flex-col gap-10 md:gap-20">
           <motion.div
-            initial={{ opacity: 0, y: "50%" }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: "50%" }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex flex-row items-center justify-center md:justify-between"
@@ -27,6 +59,8 @@ export const About = () => {
             </button>
           </motion.div>
           <motion.p
+            ref={paragraphRef}
+            id="about-text"
             initial={{ opacity: 0, y: "20%" }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,11 +68,11 @@ export const About = () => {
             className="text-3xl md:text-5xl leading-snug"
           >
             Based in the vibrant heart of Sydney, Australia, Kreativy is not
-            just a digital agency; we're your partners in creativity. Our
+            just a digital agency; we&apos;re your partners in creativity. Our
             mission is to turn your dreams into reality, one pixel at a time.
-            With a diverse team of designers, developers, and innovators, we're
-            constantly pushing the boundaries of what's possible in the digital
-            world.
+            With a diverse team of designers, developers, and innovators,
+            we&apos;re constantly pushing the boundaries of what&apos;s possible
+            in the digital world.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: "20%" }}
